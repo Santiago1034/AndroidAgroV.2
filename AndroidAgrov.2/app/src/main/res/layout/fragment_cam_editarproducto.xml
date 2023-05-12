@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CamEditarproductoFragment">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo"
+        android:scaleY="1.1">
+    </ImageView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:backgroundTint="@color/blanco_gris"
+                    android:layout_width="300dp"
+                    android:layout_height="450dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_margin="50dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="EDITAR PRODUCTO"
+                            android:textStyle="bold"
+                            android:textColor="@color/green"
+                            android:textAlignment="center"
+                            android:layout_marginTop="15dp"
+                            android:textSize="20dp">
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="180dp"
+                                android:layout_height="130dp"
+                                android:layout_marginLeft="60dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/manzanas">
+                            </ImageView>
+
+                        </LinearLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="160dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/white"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/texto1"
+                                android:text="Nombre producto"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textStyle=""
+                                android:background="@drawable/borde_agregar">
+
+                            </TextView>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="160dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/white"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/texto1"
+                                android:text="Precio"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textStyle=""
+                                android:background="@drawable/borde_agregar">
+
+                            </TextView>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="160dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/white"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/texto1"
+                                android:text="Cantidad disponible"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textStyle=""
+                                android:background="@drawable/borde_agregar">
+
+                            </TextView>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="160dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/borde_agregar">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/texto1"
+                                android:text="Fruta"
+                                android:layout_marginLeft="8dp"
+                                android:textColor="@color/black">
+
+                            </TextView>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Spinner
+                            android:id="@+id/planets_spinner"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="20dp"
+                            android:backgroundTint="#FF0000" >
+
+
+                        </Spinner>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="220dp"
+                                android:layout_marginTop="570dp"
+                                android:src="@drawable/comprobado">
+
+                            </ImageView>
+
+
+                        </LinearLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="160dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/white"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/texto1"
+                                android:text="Fruta"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textStyle=""
+                                android:background="@drawable/borde_agregar">
+
+                            </TextView>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="570dp"
+                android:src="@drawable/cancelar">
+
+            </ImageView>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/comprobado"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="570dp">
+
+        </ImageView>
+    </FrameLayout>
+
+</FrameLayout>
