@@ -32,7 +32,6 @@ class MasOpcionesFragment : Fragment() {
     private lateinit var btnDespachos: Button
     private lateinit var btnEntrega:Button
     private lateinit var btnPedidos:Button
-    private lateinit var btnSoporte:Button
     private lateinit var btnDevolucion:Button
     private lateinit var btnTransportador:Button
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +55,6 @@ class MasOpcionesFragment : Fragment() {
         this.btnDespachos = ll.findViewById(R.id.btnDespachos)
         this.btnEntrega = ll.findViewById(R.id.btnEntrega)
         this.btnPedidos = ll.findViewById(R.id.btnPedidos)
-        this.btnSoporte = ll.findViewById(R.id.btnSoporte)
         this.btnDevolucion = ll.findViewById(R.id.btnDevolucion)
         this.btnTransportador = ll.findViewById(R.id.btnTransportador)
 
@@ -86,11 +84,6 @@ class MasOpcionesFragment : Fragment() {
             navController.navigate(R.id.pedidos_RecyclerFragment)
         }
 
-        btnSoporte.setOnClickListener {
-            val navController = Navigation.findNavController(requireActivity(), R.id.btnSoporte)
-            navController.navigate(R.id.soporte_RecyclerFragment)
-        }
-
         btnDevolucion.setOnClickListener {
             val navController = Navigation.findNavController(requireActivity(), R.id.btnDevolucion)
             navController.navigate(R.id.devolucion_recyclerFragment)
@@ -103,4 +96,12 @@ class MasOpcionesFragment : Fragment() {
         return ll
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val bottomSopor:Button=view.findViewById(R.id.btnSoporte)
+        bottomSopor.setOnClickListener {
+            val intent=Intent(getActivity(),Activity_soporte::class.java)
+            startActivity(intent)
+        }    
+    }
 }
