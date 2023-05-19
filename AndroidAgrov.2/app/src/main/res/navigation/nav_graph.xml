@@ -96,7 +96,11 @@
         android:id="@+id/produc_RecyclerFragment"
         android:name="com.example.agroexpress.Produc_RecyclerFragment"
         android:label="fragment_produc__recycler"
-        tools:layout="@layout/fragment_produc__recycler" />
+        tools:layout="@layout/fragment_produc__recycler" >
+        <action
+            android:id="@+id/action_produc_RecyclerFragment_to_camEditarproductoFragment"
+            app:destination="@id/camEditarproductoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/camp_RecyclerFragment"
         android:name="com.example.agroexpress.Camp_RecyclerFragment"
