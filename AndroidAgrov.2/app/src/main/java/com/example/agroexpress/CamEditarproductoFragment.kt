@@ -1,13 +1,22 @@
 package com.example.agroexpress
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.resources.*
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import java.util.Objects
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +29,11 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class CamEditarproductoFragment : Fragment() {
+    private lateinit var texNombre : EditText
+    private lateinit var texId : EditText
+    private lateinit var texUrlImg :EditText
+    private lateinit var btnGuardar : ImageButton
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -40,17 +54,35 @@ class CamEditarproductoFragment : Fragment() {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_cam_editarproducto, container, false)
         val t = inflater.inflate(R.layout.fragment_cam_editarproducto, container, false)
-        val spinner = t.findViewById<Spinner>(R.id.planets_spinner)
+        this.texNombre = t.findViewById(R.id.NomProduc)
+        this.texUrlImg = t.findViewById(R.id.UrlImg)
+        this.texId = t.findViewById(R.id.IdProduc)
+        this.btnGuardar = t.findViewById(R.id.btnGuardarProduc)
+
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.planets_array,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner.adapter = adapter
+        btnGuardar.setOnClickListener {
+            val url = "http://192.168.245.169/DatosBdAgro/insertarPrduc.php"
+            val queue = Volley.newRequestQueue(getActivity())
+            val resultPost = object : StringRequest(Request.Method.POST,url,
+            Response.Listener< String>{response ->
+                Toast.makeText(getActivity(),"categoria creada",Toast.LENGTH_LONG).show()
+            },Response.ErrorListener{error->
+                    Toast.makeText(getActivity()," $error",Toast.LENGTH_LONG).show()
+                }
+            ){
+                override fun getParams(): MutableMap<String, String>? {
+                    val parametros = HashMap<String,String>()
+                    parametros.put("LisP_Id",texId?.text.toString())
+                    Log.d("ID",texId?.text.toString())
+
+                    parametros.put("LisP_Nombre",texNombre?.text.toString())
+                    parametros.put("LisP_Url",texUrlImg?.text.toString())
+
+                return parametros
+                }
+
+            }
+            queue.add(resultPost)
         }
         return t
     }
