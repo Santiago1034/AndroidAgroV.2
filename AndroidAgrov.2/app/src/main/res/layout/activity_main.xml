@@ -12,6 +12,8 @@
        >
 
 
+
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -24,6 +26,14 @@
             </ImageView>
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
+    <Button
+
+        android:id="@+id/bntPrubaSpiner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp">
+    </Button>
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
