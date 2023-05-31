@@ -34,7 +34,7 @@ class Despachos_RecyclerFragment : Fragment(),DespachoListener {
     private lateinit var recycler: RecyclerView
     private lateinit var  progressBar: ProgressBar
     private lateinit var relative: RelativeLayout
-    private  var despachoList= ArrayList<JSONObject>()
+    private var despachoList= ArrayList<JSONObject>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +56,7 @@ class Despachos_RecyclerFragment : Fragment(),DespachoListener {
         savedInstanceState: Bundle?
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_despachos__recycler, container, false)
-        val url= "http://192.168.68.36/DatosBdAgro/despachos.php"
+        val url= "http://192.168.176.36/DatosBdAgro/despachos.php"
         val queue= Volley.newRequestQueue(this.context)
         Log.d("camp fragment", "error")
         val stringRequest = StringRequest(Request.Method.GET,url,{ response ->
@@ -70,7 +70,7 @@ class Despachos_RecyclerFragment : Fragment(),DespachoListener {
                     despachoList.add(jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("product fragment", this.despachoList.toString())
+                Log.d("despacho fragment", this.despachoList.toString())
                 this.recycler.adapter = DespachoAdaptador(this.despachoList,this)
                 this.progressBar.visibility=View.INVISIBLE
 
