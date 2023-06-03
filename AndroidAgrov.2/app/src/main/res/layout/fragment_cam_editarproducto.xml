@@ -34,6 +34,10 @@
                         android:orientation="vertical"
                         >
 
+
+
+
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -49,6 +53,41 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+<<<<<<< HEAD
+=======
+                            android:text=""
+                            android:textColor="@color/green"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Seleccione la categoria"
+                            android:textColor="@color/green"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp">
+
+                        </TextView>
+
+
+                        <Spinner
+
+                            android:layout_marginTop="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginRight="50dp">
+
+                        </Spinner
+                            >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+>>>>>>> 78c803150aee31e962639e72c456e7d57750606c
                             android:text="URL DE LA IMAGEN"
                             android:textColor="@color/green"
                             android:layout_gravity="center"
@@ -153,6 +192,10 @@
                 android:layout_marginLeft="120dp"
                 android:layout_marginTop="470dp"
                 android:src="@drawable/cancelar"
+<<<<<<< HEAD
+=======
+                android:background="@drawable/shape_btn_guardar_eliminar"
+>>>>>>> 78c803150aee31e962639e72c456e7d57750606c
 
                 >
 
@@ -168,6 +211,10 @@
             android:src="@drawable/comprobado"
             android:layout_marginLeft="220dp"
             android:layout_marginTop="470dp"
+<<<<<<< HEAD
+=======
+            android:background="@drawable/shape_btn_guardar_eliminar"
+>>>>>>> 78c803150aee31e962639e72c456e7d57750606c
 
             >
 

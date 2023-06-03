@@ -46,7 +46,8 @@ class ComOrdenpagoFragment : Fragment() {
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
             requireContext(),
-            R.array.planets_array2,
+            //agregar spinner que borro salazar
+            R.array.planets_array,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears

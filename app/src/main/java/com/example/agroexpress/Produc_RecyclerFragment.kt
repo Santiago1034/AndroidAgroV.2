@@ -63,7 +63,11 @@ class Produc_RecyclerFragment : Fragment(),ItemListener {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_produc__recycler, container, false)
         this.floatingBtn = ll.findViewById(R.id.gravityBtnagregarProduc)
+<<<<<<< HEAD
         val url= "http://192.168.22.36/DatosBdAgro/bdagro.php"
+=======
+        val url= "http://192.168.176.36/DatosBdAgro/bdagro.php"
+>>>>>>> 78c803150aee31e962639e72c456e7d57750606c
         val queue= Volley.newRequestQueue(this.context)
         Log.d("product fragment", "error")
         val stringRequest = StringRequest(Request.Method.GET,url,{response ->

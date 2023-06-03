@@ -57,7 +57,11 @@ class Pedidos_RecyclerFragment : Fragment(), PedidosListener {
         savedInstanceState: Bundle?
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_pedidos__recycler, container, false)
+<<<<<<< HEAD
         val url= "http://192.168.22.36/DatosBdAgro/MisPedidos.php"
+=======
+        val url= "http://192.168.176.36/DatosBdAgro/MisPedidos.php"
+>>>>>>> 78c803150aee31e962639e72c456e7d57750606c
         val queue= Volley.newRequestQueue(this.context)
         Log.d("pedido fragment", "error")
         val stringRequest = StringRequest(Request.Method.GET,url,{ response ->

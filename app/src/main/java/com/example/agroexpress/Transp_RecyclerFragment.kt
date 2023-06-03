@@ -60,7 +60,11 @@ class Transp_RecyclerFragment : Fragment(), TransportadorListener {
     ): View? {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_transp__recycler, container, false)
+<<<<<<< HEAD
         val url= "http://192.168.22.36/DatosBdAgro/transportador.php"
+=======
+        val url= "http://192.168.176.36/DatosBdAgro/transportador.php"
+>>>>>>> 78c803150aee31e962639e72c456e7d57750606c
         val queue= Volley.newRequestQueue(this.context)
         Log.d("trnas fragment", "error")
         val stringRequest = StringRequest(Request.Method.GET,url,{ response ->
