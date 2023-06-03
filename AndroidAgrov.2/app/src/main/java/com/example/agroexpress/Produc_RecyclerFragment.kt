@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -16,6 +17,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.agroexpress.Adaptador.ItemListener
 import com.example.agroexpress.Adaptador.ProductoAdaptador
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -34,7 +36,9 @@ class Produc_RecyclerFragment : Fragment(),ItemListener {
     private lateinit var recycler: RecyclerView
     private lateinit var  progressBar: ProgressBar
     private lateinit var relative: RelativeLayout
+    private lateinit var floatingBtn:FloatingActionButton
     private  var productlist= ArrayList<JSONObject>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +62,8 @@ class Produc_RecyclerFragment : Fragment(),ItemListener {
     ): View? {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_produc__recycler, container, false)
-        val url= "http://192.168.68.52/DatosBdAgro/bdagro.php"
+        this.floatingBtn = ll.findViewById(R.id.gravityBtnagregarProduc)
+        val url= "http://192.168.22.36/DatosBdAgro/bdagro.php"
         val queue= Volley.newRequestQueue(this.context)
         Log.d("product fragment", "error")
         val stringRequest = StringRequest(Request.Method.GET,url,{response ->
@@ -87,11 +92,16 @@ class Produc_RecyclerFragment : Fragment(),ItemListener {
         this.recycler = ll.findViewById(R.id.recyclerproducto)
         this.progressBar = ll.findViewById(R.id.progressproducto)
         this.relative = ll.findViewById(R.id.relativeproducto)
-
+        floatingBtn.setOnClickListener{
+            val navController = Navigation.findNavController(requireActivity(), R.id.gravityBtnagregarProduc)
+            navController.navigate(R.id.camEditarproductoFragment)
+        }
         return ll
+
     }
 
     override fun onItemClicked(product: JSONObject, position: Int) {
+        //
 
     }
 

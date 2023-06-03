@@ -10,8 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        >
-
-
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -19,19 +17,20 @@
             android:background="@color/black">
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp">
+                android:layout_height="50dp"
+                android:src="@drawable/formato">
             </ImageView>
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
     <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/Home"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        app:navGraph="@navigation/nav_graph"
-        android:layout_marginBottom="70dp"
-        app:defaultNavHost="true">
-    </fragment>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"></fragment>
 
     <RelativeLayout
         android:layout_width="match_parent"

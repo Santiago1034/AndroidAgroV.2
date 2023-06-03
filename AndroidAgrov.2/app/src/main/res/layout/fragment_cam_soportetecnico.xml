@@ -24,7 +24,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <androidx.cardview.widget.CardView
-                    android:backgroundTint="@color/blanco_gris"
                     android:layout_width="300dp"
                     android:layout_height="450dp"
                     app:cardCornerRadius="20dp"

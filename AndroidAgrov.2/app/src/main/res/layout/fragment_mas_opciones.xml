@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/fondoverde"
+            android:src="@drawable/fondo_fin_verde"
             android:scaleType="centerCrop" />
 
         <LinearLayout
@@ -31,6 +31,7 @@
                 android:layout_height="105dp"
                 android:orientation="horizontal"
                 android:background="@drawable/shape_usu_menu"
+                android:layout_margin="22dp"
                 >
 
                 <ImageView

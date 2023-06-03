@@ -1,10 +1,24 @@
 package com.example.agroexpress
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.RelativeLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.example.agroexpress.Adaptador.DespachoAdaptador
+import com.example.agroexpress.Adaptador.DespachoListener
+import com.example.agroexpress.Adaptador.UsuariosAdaptador
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,44 +30,65 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Despachos_RecyclerFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Despachos_RecyclerFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class Despachos_RecyclerFragment : Fragment(),DespachoListener {
+    private lateinit var recycler: RecyclerView
+    private lateinit var  progressBar: ProgressBar
+    private lateinit var relative: RelativeLayout
+    private var despachoList= ArrayList<JSONObject>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adaptador = DespachoAdaptador(despachoList ,this)
+        val layoutmanager = LinearLayoutManager(requireContext())
+        recycler.layoutManager = layoutmanager
 
+        recycler.adapter = adaptador
+        Log.d("adaptador","onViewCreated")
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_despachos__recycler, container, false)
-    }
+        val ll = inflater.inflate(R.layout.fragment_despachos__recycler, container, false)
+        val url= "http://192.168.22.36:8080/listarProductos"
+        val queue= Volley.newRequestQueue(this.context)
+        Log.d("camp fragment", "error")
+        val stringRequest = StringRequest(Request.Method.GET,url,{ response ->
+            val jsonArray = JSONArray(response)
+            this.despachoList = ArrayList()
+            try {
+                var i = 0
+                val l = jsonArray.length()
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Despachos_RecyclerFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Despachos_RecyclerFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                while (i<l){
+                    despachoList.add(jsonArray[i] as JSONObject)
+                    i++
                 }
+                Log.d("despacho fragment", this.despachoList.toString())
+                this.recycler.adapter = DespachoAdaptador(this.despachoList,this)
+                this.progressBar.visibility=View.INVISIBLE
+
+            }catch (e: JSONException){
+
             }
+
+        },{ error ->
+
+        })
+        queue.add(stringRequest)
+        this.recycler = ll.findViewById(R.id.recyclerdespachos)
+        this.progressBar = ll.findViewById(R.id.progressdespachos)
+        this.relative = ll.findViewById(R.id.relativedespachos)
+
+        return ll}
+
+    override fun onItemClicked(despacho: JSONObject, position: Int) {
+
     }
 }
