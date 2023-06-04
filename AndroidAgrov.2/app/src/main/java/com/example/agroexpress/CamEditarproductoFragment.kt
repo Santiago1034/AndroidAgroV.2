@@ -33,6 +33,7 @@ class CamEditarproductoFragment : Fragment() {
     private lateinit var texId : EditText
     private lateinit var texUrlImg :EditText
     private lateinit var btnGuardar : ImageButton
+    private lateinit var spinerCategoria : Spinner
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -54,10 +55,23 @@ class CamEditarproductoFragment : Fragment() {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_cam_editarproducto, container, false)
         val t = inflater.inflate(R.layout.fragment_cam_editarproducto, container, false)
+        val spinner = t.findViewById<Spinner>(R.id.SpinnerCategoriaProductos)
+
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.planets_array4,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
+
+
         this.texNombre = t.findViewById(R.id.NomProduc)
         this.texUrlImg = t.findViewById(R.id.UrlImg)
         this.texId = t.findViewById(R.id.IdProduc)
         this.btnGuardar = t.findViewById(R.id.btnGuardarProduc)
+        this.spinerCategoria = t.findViewById(R.id.SpinnerCategoriaProductos)
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         btnGuardar.setOnClickListener {
@@ -77,6 +91,7 @@ class CamEditarproductoFragment : Fragment() {
 
                     parametros.put("LisP_Nombre",texNombre?.text.toString())
                     parametros.put("LisP_Url",texUrlImg?.text.toString())
+
 
                 return parametros
                 }

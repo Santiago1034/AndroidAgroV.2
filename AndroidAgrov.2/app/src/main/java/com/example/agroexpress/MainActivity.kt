@@ -43,9 +43,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
     }
-    fun abrirSpinner (){
 
-    }
 
 
 

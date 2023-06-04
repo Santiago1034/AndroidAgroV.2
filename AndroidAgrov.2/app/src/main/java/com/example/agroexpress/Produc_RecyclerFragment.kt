@@ -28,9 +28,7 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**
- * A simple [Fragment] subclass.
- * Use the [Produc_RecyclerFragment.newInstance] factory method to
- * create an instance of this fragment.
+ LISTAR DETALLE PRODUCTO EN ITEM PRODUCTO CAMPESINO
  */
 class Produc_RecyclerFragment : Fragment(),ItemListener {
     private lateinit var recycler: RecyclerView
@@ -64,7 +62,7 @@ class Produc_RecyclerFragment : Fragment(),ItemListener {
         val ll = inflater.inflate(R.layout.fragment_produc__recycler, container, false)
 
         this.floatingBtn = ll.findViewById(R.id.gravityBtnagregarProduc)
-        val url= "http://192.168.245.169/DatosBdAgro/bdagro.php"
+        val url= "http://192.168.1.58/:8080/Listarprductos"
 
 
         /*val url= "http://localhost/DatosBdAgro/bdagro.php"*/
