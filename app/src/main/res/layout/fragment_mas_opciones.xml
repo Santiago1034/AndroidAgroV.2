@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/fondoverde"
+            android:src="@drawable/fondo_fin_verde"
             android:scaleType="centerCrop" />
 
         <LinearLayout

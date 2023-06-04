@@ -73,25 +73,13 @@
         android:id="@+id/configuracionActivity"
         android:name="com.example.agroexpress.ConfiguracionActivity"
         android:label="ConfiguracionActivity" />
-    <activity
-        android:id="@+id/adminCampesinosActivity"
-        android:name="com.example.agroexpress.AdminCampesinosActivity"
-        android:label="activity_admin_campesinos"
-        tools:layout="@layout/activity_admin_campesinos" />
+
     <fragment
         android:id="@+id/camEditarproductoFragment"
         android:name="com.example.agroexpress.CamEditarproductoFragment"
         android:label="fragment_cam_editarproducto"
         tools:layout="@layout/fragment_cam_editarproducto" />
-    <fragment
-        android:id="@+id/admiProductosFragment"
-        android:name="com.example.agroexpress.AdmiProductosFragment"
-        android:label="fragment_admi_productos"
-        tools:layout="@layout/fragment_admi_productos" >
-        <action
-            android:id="@+id/action_admiProductosFragment_to_camEditarproductoFragment"
-            app:destination="@id/camEditarproductoFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/produc_RecyclerFragment"
         android:name="com.example.agroexpress.Produc_RecyclerFragment"

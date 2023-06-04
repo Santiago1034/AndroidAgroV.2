@@ -56,7 +56,11 @@ class Despachos_RecyclerFragment : Fragment(),DespachoListener {
         savedInstanceState: Bundle?
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_despachos__recycler, container, false)
+<<<<<<< HEAD
+        val url= "http://192.168.22.36:8080/listarProductos"
+=======
         val url= "http://192.168.176.36/DatosBdAgro/despachos.php"
+>>>>>>> 78c803150aee31e962639e72c456e7d57750606c
         val queue= Volley.newRequestQueue(this.context)
         Log.d("camp fragment", "error")
         val stringRequest = StringRequest(Request.Method.GET,url,{ response ->
