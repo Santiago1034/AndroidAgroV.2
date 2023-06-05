@@ -17,11 +17,22 @@ class ProductoAdaptador (private val ProductoList: ArrayList<JSONObject>, privat
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
-        var imagen: ImageView = view.findViewById(R.id.tvimg_producto)
-        var nombre: TextView = view.findViewById(R.id.tvnombre_producto)
+        var imagen: ImageView = view.findViewById(R.id.img_item_camp_product)
+        var referencia: TextView = view.findViewById(R.id.referencia_autoincrement_cam_product)
+        var id_usuario: TextView = view.findViewById(R.id.id_usuario_camp_product)
+        var nombre: TextView = view.findViewById(R.id.nombre_product_camp)
+        var categoria: TextView = view.findViewById(R.id.categoria_product_camp)
+        var precio: TextView = view.findViewById(R.id.precio_camp_product)
+        var cantidad: TextView = view.findViewById(R.id.cantidad_dispon_camp_product)
+
 
         fun bind(Producto: JSONObject){
-            nombre.text = Producto.getString("LisP_Nombre")
+            referencia.text = Producto.getString("det_Referencia")
+            id_usuario.text = Producto.getString("det_IdUsuario")
+            nombre.text = Producto.getString("det_nombre_Product")
+            precio.text = Producto.getString("det_precio")
+            cantidad.text = Producto.getString("det_cantidad")
+            categoria.text =Producto.getString("det_Categoria")
             Log.d("json",Producto.toString())
 
         }
@@ -29,7 +40,7 @@ class ProductoAdaptador (private val ProductoList: ArrayList<JSONObject>, privat
     override  fun  onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_producto,parent,false)
+            .inflate(R.layout.item_producto_camp,parent,false)
     )
     override fun getItemCount() = this.ProductoList.size
 

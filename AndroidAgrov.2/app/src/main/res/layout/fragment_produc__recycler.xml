@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>
-<<<<<<< HEAD
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -85,14 +85,8 @@
         android:src="@drawable/mas"
         android:layout_marginTop="550dp"
         android:layout_marginHorizontal="340dp">
-=======
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/gravityBtnagregarProduc"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginLeft="280dp">
->>>>>>> 78c803150aee31e962639e72c456e7d57750606c
+
+
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 

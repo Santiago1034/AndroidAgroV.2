@@ -10,13 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        >
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> 78c803150aee31e962639e72c456e7d57750606c
+
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -30,16 +29,9 @@
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-<<<<<<< HEAD
-=======
-    <Button
 
-        android:id="@+id/bntPrubaSpiner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp">
-    </Button>
->>>>>>> 78c803150aee31e962639e72c456e7d57750606c
+
+
     <fragment
         android:id="@+id/Home"
         android:name="androidx.navigation.fragment.NavHostFragment"
